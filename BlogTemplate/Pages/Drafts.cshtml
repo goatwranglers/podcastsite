@@ -1,0 +1,30 @@
+@page
+@using GW.Site.Pages
+@model DraftsModel
+@{
+    ViewData["Title"] = "Drafts";
+
+    <h2>@ViewData["Title"]</h2>
+
+    if (!Model.DraftSummaries.Any())
+    {
+        <p>View and edit your saved drafts here.</p>
+    }
+    else
+    {
+        foreach (var post in Model.DraftSummaries)
+        {
+            <article>
+                <div class="col-md-12">
+                    <h2><a asp-page="/edit" asp-route-id="@post.Id.ToString("N")" asp-route-slug="@post.Slug">@post.Title</a></h2>
+                    @if (post.PublishTime != default(DateTimeOffset))
+                    {
+                        <div class="h5 text-muted">Last Published @post.PublishTime.ToString("MMM dd, yyyy")</div>
+                    }
+                    <p class="lead">@post.Excerpt</p>
+                    <h4><a href="/post/@post.Id.ToString("N")/@post.Slug"><span class="glyphicon glyphicon-comment"></span> @post.CommentCount</a></h4>
+                </div>
+            </article>
+        }
+    }
+}

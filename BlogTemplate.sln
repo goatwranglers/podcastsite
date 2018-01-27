@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GW.Site", "BlogTemplate\GW.Site.csproj", "{F35A3EB7-533E-44B0-B153-4B20A5C0B6FF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{58901495-13DD-47A5-BA4A-AB01E3E04C47}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GW.Site.Tests", "BlogTemplate.Tests\GW.Site.Tests.csproj", "{5824F803-D8E8-4EA4-A074-E68464F0CFF0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F35A3EB7-533E-44B0-B153-4B20A5C0B6FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F35A3EB7-533E-44B0-B153-4B20A5C0B6FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F35A3EB7-533E-44B0-B153-4B20A5C0B6FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F35A3EB7-533E-44B0-B153-4B20A5C0B6FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5824F803-D8E8-4EA4-A074-E68464F0CFF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5824F803-D8E8-4EA4-A074-E68464F0CFF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5824F803-D8E8-4EA4-A074-E68464F0CFF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5824F803-D8E8-4EA4-A074-E68464F0CFF0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B7843AA1-190E-4A15-9F90-ED4C35F900FB}
+	EndGlobalSection
+EndGlobal
