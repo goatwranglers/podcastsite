@@ -13,6 +13,8 @@ namespace GW.Site.Pages
         private readonly BlogDataStore _dataStore;
 
         public IEnumerable<PostSummaryModel> PostSummaries { get; private set; }
+        public PostSummaryModel CurrentPost { get; private set; }
+        public PostSummaryModel NextPost { get; private set; }
 
         public IndexModel(BlogDataStore dataStore)
         {
@@ -21,18 +23,36 @@ namespace GW.Site.Pages
 
         public void OnGet()
         {
-            Func<Post, bool> postFilter = p => p.IsPublic;
-            Func<Post, bool> deletedPostFilter = p => !p.IsDeleted;
-            var postModels = _dataStore.GetAllPosts().Where(postFilter).Where(deletedPostFilter);
-
-            PostSummaries = postModels.Select(p => new PostSummaryModel {
+            bool PostFilter(Post p) => p.IsPublic;
+            bool DeletedPostFilter(Post p) => !p.IsDeleted;
+            var postModels = _dataStore.GetAllPosts().Where(PostFilter).Where(DeletedPostFilter);
+            var posts = postModels as Post[] ?? postModels.ToArray();
+            CurrentPost = posts.Select(p => new PostSummaryModel
+            {
                 Id = p.Id,
                 Slug = p.Slug,
                 Title = p.Title,
                 Excerpt = p.Excerpt,
                 PublishTime = p.PubDate,
-                CommentCount = p.Comments.Where(c => c.IsPublic).Count(),
-            });
+                CommentCount = p.Comments.Count(c => c.IsPublic),
+            }).Take(1).FirstOrDefault();
+            NextPost = posts.Select(p => new PostSummaryModel
+            {
+                Id = p.Id,
+                Slug = p.Slug,
+                Title = p.Title,
+                Excerpt = p.Excerpt,
+                PublishTime = p.PubDate,
+                CommentCount = p.Comments.Count(c => c.IsPublic),
+            }).Skip(1).Take(1).FirstOrDefault();
+            PostSummaries = posts.Select(p => new PostSummaryModel {
+                Id = p.Id,
+                Slug = p.Slug,
+                Title = p.Title,
+                Excerpt = p.Excerpt,
+                PublishTime = p.PubDate,
+                CommentCount = p.Comments.Count(c => c.IsPublic),
+            }).Skip(2).Take(5);
         }
 
         public class PostSummaryModel

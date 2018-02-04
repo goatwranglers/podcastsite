@@ -5,6 +5,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>GoatWranglers</title>
     <script src="~/js/modernizr.js"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <!-- =================================== -->
     <!-- 			  STYLES 				 -->
     <!-- =================================== -->
@@ -35,7 +39,7 @@
     <meta property="og:title" content="GOAT Wranglers" />
     <meta property="og:description" content="GOAT Wranglers Podcast" />
     <meta property="og:url" content="https://www.goatwranglers.io" />
-    <meta property="og:site_name" content="Soundcast" />
+    <meta property="og:site_name" content="GOAT Wranglers" />
     <meta property="og:image" content="https://www.goatwranglers.ioimg/facebook-og.jpg" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="https://www.goatwranglers.io" />
@@ -50,14 +54,13 @@
 <body itemscope itemtype="http://schema.org/WebSite">
     <header class="header absolute" itemscope itemtype="http://schema.org/Organization">
         <div class="container">
-            <h1 class="logo"><a href="/"><img itemprop="logo" src="~/img/logo.png" alt="GOAT Wranglers" title="GOAT Wranglers Podcast" /></a></h1>
+            <h1 class="logo"><a href="/"><img itemprop="logo" src="~/img/ColorLogo_Full.png" alt="GOAT Wranglers" title="GOAT Wranglers Podcast" /></a></h1>
             <nav class="navigation">
                 <ul class="menu">
                     <li class="menuitem active"><a asp-page="/">Home</a></li>
                     <li class="menuitem"><a asp-page="/Podcasts">Podcasts</a></li>
                     <li class="menuitem"><a asp-page="/Index">Blog</a></li>
                     <li class="menuitem"><a asp-page="/About">About</a></li>
-                    @await Html.PartialAsync("_LoginPartial")
                 </ul>
                 <a href="#" class="btn-hamburguer-menu"><i class="fa fa-bars"></i></a>
             </nav>
@@ -69,76 +72,6 @@
     <footer class="footer">
 
         <!-- ===== FOOTER CONTENT INFORMATION ===== -->
-        <section class="section-positive">
-            <div class="container">
-
-                <div class="row mt-70 mb-30">
-
-                    <!-- ===== SITEMAP ===== -->
-                    <div class="col-sm-3 mb-40">
-                        <h2 class="title-separator white">Sitemap</h2>
-                        <ul class="footer-list">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="podcasts.html">Podcasts</a></li>
-                            <li><a href="single-page.html">Pages</a></li>
-                            <li><a href="about-us.html">About Us</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- ===== PODCASTS EPISODES ===== -->
-                    <div class="col-sm-3 mb-40">
-                        <h2 class="title-separator white">Lastest Episodes</h2>
-                        <ul class="footer-complement">
-                            <li>
-                                <a href="podcast.html">#08 - Our vacations have been so amazing!</a>
-                                <span>December 22, 2015</span>
-                            </li>
-                            <li>
-                                <a href="podcast-soundcloud.html">#07 - Podcast embed from SoundCloud</a>
-                                <span>December 21, 2015</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- ===== PODCASTS EPISODES ===== -->
-                    <div class="col-sm-3 mb-40">
-                        <h2 class="title-separator white">Who is helping?</h2>
-                        <ul class="footer-complement">
-                            <li>
-                                <a href="#"></a>
-                                <span>Donation - U$ 10</span>
-                            </li>
-                            <li>
-                                <a href="#"></a>
-                                <span>Donation - U$ 5</span>
-                            </li>
-                            <li>
-                                <a href="#"></a>
-                                <span>Donation - U$ 50</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- ===== SOCIAL CONNECTION ===== -->
-                    <div class="col-sm-3 mb-40">
-                        <h2 class="title-separator white">We are social</h2>
-                        <ul class="social-list">
-                            <li class="social-item"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                            <li class="social-item"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <li class="social-item"><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
-                            <li class="social-item"><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-                            <li class="social-item"><a href="#" target="_blank"><i class="fa fa-soundcloud"></i></a></li>
-                            <li class="social-item"><a href="#" target="_blank"><i class="fa fa-pinterest"></i></a></li>
-                            <li class="social-item"><a href="#" target="_blank"><i class="fa fa-youtube"></i></a></li>
-                            <li class="social-item"><a href="#" target="_blank"><i class="fa fa-spotify"></i></a></li>
-                        </ul>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
 
         <!-- ===== FOOTER INFORMATION ===== -->
         <section class="footer-credits">
@@ -147,13 +80,13 @@
                 <div class="row">
 
                     <!-- ===== CREDIT LOGO ===== -->
-                    <div class="col-sm-6 footer-logo">
-                        <h2><a href="index.html"><img src="~/img/logo.png" alt="Soudcast - Podcast Responsive Theme" title="Soundcast - Podcast Responsive Theme" /></a></h2>
+                    <div class="col-sm-3 footer-logo">
+                        <h2><a href="indexhtml"><img src="~/img/ColorLogo_Full.png" alt="GOAT Wranglers - Podcast" title="GOAT Wranglers - Podcast" /></a></h2>
                     </div>
 
                     <!-- ===== CREDIT LOGO ===== -->
-                    <div class="col-sm-6 text-right">
-                        Soundcast - 2016. All rights reserved.
+                    <div class="col-sm-5 col-sm-offset-4 text-right">
+                        GOAT Wranglers - @DateTime.Now.Year. All rights reserved.
                     </div>
 
                 </div>
@@ -168,7 +101,7 @@
 <!-- =================================== -->
 <script src="~/js/bootstrap.min.js"></script>
 @RenderSection("Scripts", required: false)
-    <script src="~/js/jquery-1.11.min.js"></script>
+
     <script src="~/js/bootstrap.min.js"></script>
     <script src="~/js/mediaelement-and-player.min.js"></script>
     <script src="~/js/magnific-popup.min.js"></script>
